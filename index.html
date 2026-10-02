@@ -193,6 +193,23 @@
       font-weight: 800 !important;
     }
 
+    .language-select {
+      min-height: 42px;
+      padding: 8px 30px 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--white);
+      background: rgba(6, 19, 33, 0.88);
+      font: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .language-select option {
+      color: var(--white);
+      background: var(--dark);
+    }
+
     .menu-button {
       display: none;
       border: 0;
@@ -1128,7 +1145,7 @@
   <!-- Navigasi -->
   <header class="navbar" id="navbar">
     <div class="container nav-wrap">
-      <a href="#beranda" class="brand" aria-label="GALUNG Beranda">
+      <a href="#beranda" class="brand" aria-label="GALUNG Beranda" data-i18n-aria="brand.home">
         <div class="brand-mark">♫</div>
         <div>
           GALUNG
@@ -1137,14 +1154,20 @@
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#tentang">Tentang GALUNG</a>
-        <a href="#fitur">Keunggulan</a>
-        <a href="#cara-kerja">Cara Kerja</a>
-        <a href="#pencipta">Pencipta</a>
-        <a href="#kontak" class="nav-cta">Kolaborasi</a>
+        <a href="#tentang" data-i18n="nav.about">Tentang GALUNG</a>
+        <a href="#fitur" data-i18n="nav.features">Keunggulan</a>
+        <a href="#cara-kerja" data-i18n="nav.how">Cara Kerja</a>
+        <a href="#pencipta" data-i18n="nav.founder">Pencipta</a>
+        <a href="#kontak" class="nav-cta" data-i18n="nav.collaborate">Kolaborasi</a>
       </nav>
 
-      <button class="menu-button" id="menuButton" aria-label="Buka menu">
+      <select class="language-select" id="languageSelect" aria-label="Pilih bahasa" data-i18n-aria="language.label">
+        <option value="id">Indonesia</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+
+      <button class="menu-button" id="menuButton" aria-label="Buka menu" data-i18n-aria="menu.open">
         ☰
       </button>
     </div>
@@ -1157,58 +1180,58 @@
         <div>
           <div class="hero-badge">
             <span class="pulse"></span>
-            Inovasi Musik Tradisional yang Inklusif
+            <span data-i18n="hero.badge">Inovasi Musik Tradisional yang Inklusif</span>
           </div>
 
-          <h1>
+          <h1 data-i18n="hero.title">
             Musik angklung
             <span>untuk semua.</span>
           </h1>
 
           <p class="hero-text">
-            GALUNG atau <strong>Gawang Angklung</strong> adalah pendekatan
+            <span data-i18n="hero.description">GALUNG atau <strong>Gawang Angklung</strong> adalah pendekatan
             pembelajaran musik berbasis visual yang membuka ruang partisipasi
-            bermain angklung bagi Teman Tuli dan masyarakat luas.
+            bermain angklung bagi Teman Tuli dan masyarakat luas.</span>
           </p>
 
           <div class="hero-actions">
             <a href="#tentang" class="button button-primary">
-              Kenali GALUNG <span>→</span>
+              <span data-i18n="hero.explore">Kenali GALUNG <span>→</span></span>
             </a>
             <a href="#cara-kerja" class="button button-secondary">
-              Lihat Cara Kerja <span>▶</span>
+              <span data-i18n="hero.steps">Lihat Cara Kerja <span>▶</span></span>
             </a>
           </div>
 
           <div class="hero-note">
             <span>✦</span>
-            <span>
+            <span data-i18n="hero.note">
               Menghubungkan <strong>visual, ritme, getaran, dan kolaborasi</strong>
               dalam pengalaman musik yang setara.
             </span>
           </div>
         </div>
 
-        <div class="galung-visual" aria-label="Ilustrasi aplikasi GALUNG">
+        <div class="galung-visual" aria-label="Ilustrasi aplikasi GALUNG" data-i18n-aria="hero.visual">
           <div class="halo"></div>
 
           <div class="floating-chip chip-one">
-            <span class="chip-icon">●</span> Isyarat visual sinkron
+            <span class="chip-icon">●</span> <span data-i18n="hero.chipSync">Isyarat visual sinkron</span>
           </div>
 
           <div class="floating-chip chip-two">
-            <span class="chip-icon">✦</span> Angklung Color Method
+            <span class="chip-icon">✦</span> <span data-i18n="hero.chipColor">Angklung Color Method</span>
           </div>
 
           <div class="app-card">
             <div class="app-topbar">
               <p>GALUNG App</p>
-              <span>● Live Session</span>
+              <span data-i18n="hero.live">● Live Session</span>
             </div>
 
             <div class="app-screen">
-              <p class="screen-title">Gawang Angklung</p>
-              <p class="screen-song">Belajar Ritme Bersama</p>
+              <p class="screen-title" data-i18n="hero.demoTitle">Gawang Angklung</p>
+              <p class="screen-song" data-i18n="hero.demoSong">Belajar Ritme Bersama</p>
 
               <div class="falling-lanes">
                 <div class="lane">
@@ -1234,9 +1257,9 @@
               </div>
 
               <div class="screen-bottom">
-                <span>Ikuti warna dan waktu</span>
+                <span data-i18n="hero.demoFollow">Ikuti warna dan waktu</span>
                 <div class="play-button">▶</div>
-                <span>Tempo: 90 BPM</span>
+                <span data-i18n="hero.demoTempo">Tempo: 90 BPM</span>
               </div>
             </div>
           </div>
@@ -1249,25 +1272,26 @@
       <div class="container intro-grid">
         <div class="quote-panel">
           <p>
-            Setiap orang berhak merasakan kebersamaan, ekspresi, dan kegembiraan
+            <span data-i18n="about.quote">Setiap orang berhak merasakan kebersamaan, ekspresi, dan kegembiraan
             melalui musik.
+            </span>
           </p>
-          <span>— Semangat GALUNG: Musik Tanpa Batas</span>
+          <span data-i18n="about.motto">— Semangat GALUNG: Musik Tanpa Batas</span>
         </div>
 
         <div class="intro-content">
-          <div class="section-label">Tentang GALUNG</div>
-          <h2 class="section-title">
+          <div class="section-label" data-i18n="about.label">Tentang GALUNG</div>
+          <h2 class="section-title" data-i18n="about.title">
             Gawang Angklung sebagai jembatan akses musik.
           </h2>
 
-          <p class="highlight-text">
+          <p class="highlight-text" data-i18n="about.highlight">
             GALUNG merupakan singkatan dari Gawang Angklung, sebuah inovasi
             pembelajaran yang memadukan angklung tradisional dengan teknologi
             visual interaktif.
           </p>
 
-          <p>
+          <p data-i18n="about.body1">
             Dalam pembelajaran musik konvensional, bunyi sering menjadi pusat
             instruksi. GALUNG menawarkan jalur akses lain melalui tampilan
             warna, simbol, waktu, gerak visual, ritme, dan pengalaman bermain
@@ -1275,7 +1299,7 @@
             angklung perlu dimainkan secara lebih terstruktur.
           </p>
 
-          <p>
+          <p data-i18n="about.body2">
             Metode ini dirancang terutama untuk memperluas akses Teman Tuli
             dalam kegiatan musik angklung, tanpa menghilangkan nilai budaya,
             kebersamaan ansambel, maupun peran pendidik dalam proses belajar.
@@ -1288,23 +1312,23 @@
     <section class="stats">
       <div class="container stats-grid">
         <div class="stat-item">
-          <span class="stat-number">Visual</span>
-          <span class="stat-label">Isyarat pembelajaran yang mudah diikuti</span>
+          <span class="stat-number" data-i18n="stats.visual">Visual</span>
+          <span class="stat-label" data-i18n="stats.visualText">Isyarat pembelajaran yang mudah diikuti</span>
         </div>
 
         <div class="stat-item">
-          <span class="stat-number">Ritmis</span>
-          <span class="stat-label">Membantu latihan ketepatan waktu bermain</span>
+          <span class="stat-number" data-i18n="stats.rhythmic">Ritmis</span>
+          <span class="stat-label" data-i18n="stats.rhythmicText">Membantu latihan ketepatan waktu bermain</span>
         </div>
 
         <div class="stat-item">
-          <span class="stat-number">Inklusif</span>
-          <span class="stat-label">Membuka partisipasi lintas kemampuan</span>
+          <span class="stat-number" data-i18n="stats.inclusive">Inklusif</span>
+          <span class="stat-label" data-i18n="stats.inclusiveText">Membuka partisipasi lintas kemampuan</span>
         </div>
 
         <div class="stat-item">
-          <span class="stat-number">Budaya</span>
-          <span class="stat-label">Menghidupkan angklung dalam ruang belajar</span>
+          <span class="stat-number" data-i18n="stats.culture">Budaya</span>
+          <span class="stat-label" data-i18n="stats.cultureText">Menghidupkan angklung dalam ruang belajar</span>
         </div>
       </div>
     </section>
@@ -1314,13 +1338,13 @@
       <div class="container">
         <div class="features-head">
           <div>
-            <div class="section-label">Keunggulan Pendekatan</div>
-            <h2 class="section-title">
+            <div class="section-label" data-i18n="features.label">Keunggulan Pendekatan</div>
+            <h2 class="section-title" data-i18n="features.title">
               Belajar angklung dengan pengalaman yang lebih terbuka.
             </h2>
           </div>
 
-          <p class="section-description">
+          <p class="section-description" data-i18n="features.description">
             GALUNG mengedepankan interaksi visual dan pembelajaran bersama,
             sehingga musik dapat menjadi ruang ekspresi yang lebih aksesibel,
             menyenangkan, dan bermakna.
@@ -1330,8 +1354,8 @@
         <div class="feature-grid">
           <article class="feature-card">
             <div class="feature-icon">◉</div>
-            <h3>Petunjuk Visual</h3>
-            <p>
+            <h3 data-i18n="features.visualTitle">Petunjuk Visual</h3>
+            <p data-i18n="features.visualText">
               Notasi dan waktu bermain diterjemahkan ke dalam tampilan visual
               yang dapat diikuti saat peserta memainkan angklung secara
               individual maupun berkelompok.
@@ -1341,8 +1365,8 @@
 
           <article class="feature-card">
             <div class="feature-icon">♫</div>
-            <h3>Ritme dan Tempo</h3>
-            <p>
+            <h3 data-i18n="features.rhythmTitle">Ritme dan Tempo</h3>
+            <p data-i18n="features.rhythmText">
               Peserta dilatih mengenali pola waktu, pergantian bagian lagu,
               serta momen memainkan angklung melalui sinyal yang tersinkron.
             </p>
@@ -1351,8 +1375,8 @@
 
           <article class="feature-card">
             <div class="feature-icon">✦</div>
-            <h3>Angklung Color Method</h3>
-            <p>
+            <h3 data-i18n="features.colorTitle">Angklung Color Method</h3>
+            <p data-i18n="features.colorText">
               Warna digunakan sebagai elemen bantu untuk membangun hubungan
               antara instruksi visual, nada angklung, dan koordinasi permainan.
             </p>
@@ -1361,8 +1385,8 @@
 
           <article class="feature-card">
             <div class="feature-icon">◎</div>
-            <h3>Kolaborasi Ansambel</h3>
-            <p>
+            <h3 data-i18n="features.ensembleTitle">Kolaborasi Ansambel</h3>
+            <p data-i18n="features.ensembleText">
               GALUNG mendukung suasana belajar bersama, karena setiap peserta
               dapat mengambil peran untuk membentuk harmoni dalam satu karya.
             </p>
@@ -1371,8 +1395,8 @@
 
           <article class="feature-card">
             <div class="feature-icon">♥</div>
-            <h3>Pendidikan Inklusif</h3>
-            <p>
+            <h3 data-i18n="features.educationTitle">Pendidikan Inklusif</h3>
+            <p data-i18n="features.educationText">
               Pendekatan ini menempatkan akses, partisipasi, dan rasa percaya
               diri sebagai bagian penting dari pengalaman belajar musik.
             </p>
@@ -1381,8 +1405,8 @@
 
           <article class="feature-card">
             <div class="feature-icon">⌁</div>
-            <h3>Pelestarian Budaya</h3>
-            <p>
+            <h3 data-i18n="features.cultureTitle">Pelestarian Budaya</h3>
+            <p data-i18n="features.cultureText">
               Teknologi digunakan untuk memperluas cara masyarakat mengenal,
               memainkan, dan merayakan angklung sebagai warisan budaya.
             </p>
@@ -1396,17 +1420,17 @@
     <section class="section how" id="cara-kerja">
       <div class="container how-grid">
         <div>
-          <div class="section-label">Cara Kerja</div>
-          <h2 class="section-title">
+          <div class="section-label" data-i18n="how.label">Cara Kerja</div>
+          <h2 class="section-title" data-i18n="how.title">
             Dari layar visual menuju harmoni bersama.
           </h2>
-          <p class="section-description">
+          <p class="section-description" data-i18n="how.description">
             GALUNG membangun pengalaman belajar yang menekankan keterbacaan
             instruksi, koordinasi waktu, dan keterlibatan aktif dalam ansambel
             angklung.
           </p>
 
-          <div class="info-box">
+          <div class="info-box" data-i18n="how.note">
             GALUNG bukan sekadar tampilan digital. Ia menjadi media pendukung
             pembelajaran yang dapat digunakan secara kontekstual bersama
             pendamping, guru, pelatih, komunitas, dan peserta didik.
@@ -1417,8 +1441,8 @@
           <article class="step">
             <div class="step-index">01</div>
             <div>
-              <h3>Pilih materi atau lagu</h3>
-              <p>
+              <h3 data-i18n="how.step1Title">Pilih materi atau lagu</h3>
+              <p data-i18n="how.step1Text">
                 Pelatih menyiapkan komposisi, pola ritme, atau lagu yang akan
                 dimainkan sesuai tingkat pengalaman peserta.
               </p>
@@ -1428,8 +1452,8 @@
           <article class="step">
             <div class="step-index">02</div>
             <div>
-              <h3>Ikuti isyarat pada layar</h3>
-              <p>
+              <h3 data-i18n="how.step2Title">Ikuti isyarat pada layar</h3>
+              <p data-i18n="how.step2Text">
                 Peserta memperhatikan warna, simbol, jalur, atau penanda waktu
                 yang memberi informasi mengenai giliran memainkan angklung.
               </p>
@@ -1439,8 +1463,8 @@
           <article class="step">
             <div class="step-index">03</div>
             <div>
-              <h3>Mainkan angklung secara sinkron</h3>
-              <p>
+              <h3 data-i18n="how.step3Title">Mainkan angklung secara sinkron</h3>
+              <p data-i18n="how.step3Text">
                 Ketika penanda visual mencapai titik permainan, peserta
                 menggoyangkan angklung sesuai nada dan perannya dalam ansambel.
               </p>
@@ -1450,8 +1474,8 @@
           <article class="step">
             <div class="step-index">04</div>
             <div>
-              <h3>Bangun harmoni dan percaya diri</h3>
-              <p>
+              <h3 data-i18n="how.step4Title">Bangun harmoni dan percaya diri</h3>
+              <p data-i18n="how.step4Text">
                 Proses latihan dilakukan berulang dan kolaboratif agar peserta
                 dapat berkembang dalam ritme, koordinasi, ekspresi, serta kerja
                 sama musikal.
@@ -1469,42 +1493,43 @@
           <img
             src="ardian.jpeg"
             alt="Ardian Sumarwan, pencipta GALUNG"
+            data-i18n-alt="founder.photo"
             class="profile-photo"
           />
-          <div class="profile-tag">Ardian Sumarwan</div>
+          <div class="profile-tag" data-i18n="founder.name">Ardian Sumarwan</div>
         </div>
 
         <div>
-          <div class="section-label">Inovator GALUNG</div>
-          <h2 class="section-title">
+          <div class="section-label" data-i18n="founder.label">Inovator GALUNG</div>
+          <h2 class="section-title" data-i18n="founder.title">
             Ardian Sumarwan — menghadirkan akses melalui angklung.
           </h2>
 
-          <p>
+          <p data-i18n="founder.body1">
             Ardian Sumarwan, yang akrab disapa Kang Ari, dikenal sebagai
             inovator pembelajaran angklung dan pencipta metode GALUNG atau
             Gawang Angklung. Gagasannya lahir dari keyakinan bahwa musik tidak
             seharusnya memiliki batas akses.
           </p>
 
-          <p>
+          <p data-i18n="founder.body2">
             Melalui perpaduan kreativitas, pendekatan visual, dan semangat
             inklusivitas, GALUNG membuka kesempatan bagi Teman Tuli untuk ikut
             memainkan angklung, berlatih ritme, berkolaborasi, serta tampil
             dalam pengalaman musik bersama.
           </p>
 
-          <p>
+          <p data-i18n="founder.body3">
             Pengembangan GALUNG juga menegaskan bahwa teknologi dapat berfungsi
             sebagai jembatan: bukan menggantikan manusia dan pendidik, tetapi
             memperluas cara belajar agar lebih setara dan partisipatif.
           </p>
 
           <div class="founder-list">
-            <div><span>✓</span> Inovasi pembelajaran musik</div>
-            <div><span>✓</span> Angklung dan budaya Indonesia</div>
-            <div><span>✓</span> Akses bagi Teman Tuli</div>
-            <div><span>✓</span> Kolaborasi pendidikan inklusif</div>
+            <div><span>✓</span> <span data-i18n="founder.point1">Inovasi pembelajaran musik</span></div>
+            <div><span>✓</span> <span data-i18n="founder.point2">Angklung dan budaya Indonesia</span></div>
+            <div><span>✓</span> <span data-i18n="founder.point3">Akses bagi Teman Tuli</span></div>
+            <div><span>✓</span> <span data-i18n="founder.point4">Kolaborasi pendidikan inklusif</span></div>
           </div>
         </div>
       </div>
@@ -1513,11 +1538,11 @@
     <!-- Dampak -->
     <section class="section impact">
       <div class="container">
-        <div class="section-label">Dampak yang Diharapkan</div>
-        <h2 class="section-title">
+        <div class="section-label" data-i18n="impact.label">Dampak yang Diharapkan</div>
+        <h2 class="section-title" data-i18n="impact.title">
           Ketika musik menjadi ruang yang dapat diakses bersama.
         </h2>
-        <p class="section-description">
+        <p class="section-description" data-i18n="impact.description">
           GALUNG membawa perspektif bahwa pembelajaran seni dapat dirancang
           lebih adaptif terhadap kebutuhan peserta didik, sekaligus tetap
           berakar pada identitas budaya lokal.
@@ -1525,24 +1550,24 @@
 
         <div class="impact-grid">
           <article class="impact-card">
-            <h3>Partisipasi</h3>
-            <p>
+            <h3 data-i18n="impact.participationTitle">Partisipasi</h3>
+            <p data-i18n="impact.participationText">
               Mendorong lebih banyak orang untuk mengambil bagian dalam kegiatan
               musik angklung tanpa membatasi pengalaman pada kemampuan mendengar.
             </p>
           </article>
 
           <article class="impact-card">
-            <h3>Kepercayaan Diri</h3>
-            <p>
+            <h3 data-i18n="impact.confidenceTitle">Kepercayaan Diri</h3>
+            <p data-i18n="impact.confidenceText">
               Memberi ruang bagi peserta untuk tampil, berkreasi, dan merasa
               memiliki peran yang bermakna dalam sebuah ansambel.
             </p>
           </article>
 
           <article class="impact-card">
-            <h3>Kebersamaan</h3>
-            <p>
+            <h3 data-i18n="impact.togetherTitle">Kebersamaan</h3>
+            <p data-i18n="impact.togetherText">
               Menghadirkan angklung sebagai media perjumpaan antara peserta,
               guru, keluarga, komunitas, dan masyarakat yang lebih inklusif.
             </p>
@@ -1555,8 +1580,8 @@
     <section class="cta" id="kontak">
       <div class="container cta-wrap">
         <div>
-          <h2>Mari membangun pengalaman musik yang inklusif.</h2>
-          <p>
+          <h2 data-i18n="contact.title">Mari membangun pengalaman musik yang inklusif.</h2>
+          <p data-i18n="contact.description">
             Terbuka untuk kolaborasi pendidikan, workshop, pelatihan angklung,
             kegiatan komunitas, riset, serta pengembangan ekosistem musik yang
             dapat diakses oleh lebih banyak orang.
@@ -1568,8 +1593,9 @@
           class="button"
           target="_blank"
           rel="noopener noreferrer"
+          id="whatsappLink"
         >
-          Hubungi Ardian <span>→</span>
+          <span data-i18n="contact.button">Hubungi Ardian <span>→</span></span>
         </a>
       </div>
     </section>
@@ -1588,26 +1614,26 @@
             </div>
           </a>
 
-          <p class="footer-text" style="margin-top: 17px; max-width: 380px;">
+          <p class="footer-text" style="margin-top: 17px; max-width: 380px;" data-i18n="footer.description">
             Inovasi pembelajaran angklung berbasis visual untuk memperluas
             akses musik, kolaborasi, dan pelestarian budaya Indonesia.
           </p>
         </div>
 
         <div>
-          <h3 class="footer-title">Navigasi</h3>
+          <h3 class="footer-title" data-i18n="footer.navigation">Navigasi</h3>
           <div class="footer-links">
-            <a href="#tentang">Tentang GALUNG</a>
-            <a href="#fitur">Keunggulan</a>
-            <a href="#cara-kerja">Cara Kerja</a>
-            <a href="#pencipta">Pencipta</a>
+            <a href="#tentang" data-i18n="nav.about">Tentang GALUNG</a>
+            <a href="#fitur" data-i18n="nav.features">Keunggulan</a>
+            <a href="#cara-kerja" data-i18n="nav.how">Cara Kerja</a>
+            <a href="#pencipta" data-i18n="nav.founder">Pencipta</a>
           </div>
         </div>
 
         <div>
-          <h3 class="footer-title">Kolaborasi</h3>
+          <h3 class="footer-title" data-i18n="footer.collaborate">Kolaborasi</h3>
           <div class="footer-links">
-            <a href="mailto:emailanda@example.com">Email</a>
+            <a href="mailto:emailanda@example.com" data-i18n="footer.email">Email</a>
             <a href="#">Instagram</a>
             <a href="#">YouTube</a>
             <a href="#">WhatsApp</a>
@@ -1616,8 +1642,8 @@
       </div>
 
       <div class="copyright">
-        <span>© 2026 Ardian Sumarwan — GALUNG (Gawang Angklung).</span>
-        <span>Musik, budaya, dan akses untuk semua.</span>
+        <span data-i18n="footer.copyright">© 2026 Ardian Sumarwan — GALUNG (Gawang Angklung).</span>
+        <span data-i18n="footer.tagline">Musik, budaya, dan akses untuk semua.</span>
       </div>
     </div>
   </footer>
@@ -1626,6 +1652,161 @@
     const navbar = document.getElementById("navbar");
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
+    const languageSelect = document.getElementById("languageSelect");
+
+    const translations = {
+      "meta.title": [
+        "Ardian Sumarwan | GALUNG — Gawang Angklung",
+        "Ardian Sumarwan | GALUNG — Angklung Frame",
+        "アルディアン・スマルワン | GALUNG — アンクルン・フレーム",
+      ],
+      "meta.description": [
+        "Website resmi Ardian Sumarwan dan GALUNG (Gawang Angklung), inovasi pembelajaran musik angklung berbasis visual untuk pendidikan inklusif.",
+        "The official website of Ardian Sumarwan and GALUNG (Angklung Frame), a visual-based angklung learning innovation for inclusive education.",
+        "アルディアン・スマルワンとGALUNG（アンクルン・フレーム）の公式サイトです。視覚を活用した、インクルーシブなアンクルン学習の取り組みを紹介します。",
+      ],
+      "brand.home": ["GALUNG Beranda", "GALUNG Home", "GALUNG ホーム"],
+      "language.label": ["Pilih bahasa", "Choose language", "言語を選択"],
+      "menu.open": ["Buka menu", "Open menu", "メニューを開く"],
+      "menu.close": ["Tutup menu", "Close menu", "メニューを閉じる"],
+      "nav.about": ["Tentang GALUNG", "About GALUNG", "GALUNGについて"],
+      "nav.features": ["Keunggulan", "Features", "特長"],
+      "nav.how": ["Cara Kerja", "How It Works", "使い方"],
+      "nav.founder": ["Pencipta", "Creator", "開発者"],
+      "nav.collaborate": ["Kolaborasi", "Collaborate", "連携する"],
+      "hero.badge": ["Inovasi Musik Tradisional yang Inklusif", "Inclusive Traditional Music Innovation", "伝統音楽をインクルーシブに楽しむ取り組み"],
+      "hero.title": ["Musik angklung <span>untuk semua.</span>", "Angklung music <span>for everyone.</span>", "アンクルンの音楽を<span>すべての人へ。</span>"],
+      "hero.description": ["GALUNG atau <strong>Gawang Angklung</strong> adalah pendekatan pembelajaran musik berbasis visual yang membuka ruang partisipasi bermain angklung bagi Teman Tuli dan masyarakat luas.", "GALUNG, or the <strong>Angklung Frame</strong>, is a visual-based music learning approach that makes playing angklung more accessible to Deaf people and the wider community.", "GALUNG（<strong>アンクルン・フレーム</strong>）は、視覚を活用した音楽学習の方法です。ろう者をはじめ、より多くの人がアンクルン演奏に参加できる機会を広げます。"],
+      "hero.explore": ["Kenali GALUNG <span>→</span>", "Discover GALUNG <span>→</span>", "GALUNGを知る <span>→</span>"],
+      "hero.steps": ["Lihat Cara Kerja <span>▶</span>", "See How It Works <span>▶</span>", "使い方を見る <span>▶</span>"],
+      "hero.note": ["Menghubungkan <strong>visual, ritme, getaran, dan kolaborasi</strong> dalam pengalaman musik yang setara.", "Bringing <strong>visual cues, rhythm, vibration, and collaboration</strong> together in an inclusive musical experience.", "<strong>視覚的な合図、リズム、振動、そして協働</strong>をつなぎ、誰もが参加できる音楽体験をつくります。"],
+      "hero.visual": ["Ilustrasi aplikasi GALUNG", "GALUNG app illustration", "GALUNGアプリのイメージ"],
+      "hero.chipSync": ["Isyarat visual sinkron", "Synchronized visual cues", "同期する視覚的な合図"],
+      "hero.chipColor": ["Angklung Color Method", "Angklung Color Method", "アンクルン・カラー・メソッド"],
+      "hero.live": ["● Live Session", "● Live Session", "● ライブセッション"],
+      "hero.demoTitle": ["Gawang Angklung", "Angklung Frame", "アンクルン・フレーム"],
+      "hero.demoSong": ["Belajar Ritme Bersama", "Learning Rhythm Together", "みんなでリズムを学ぶ"],
+      "hero.demoFollow": ["Ikuti warna dan waktu", "Follow the colors and timing", "色とタイミングに合わせる"],
+      "hero.demoTempo": ["Tempo: 90 BPM", "Tempo: 90 BPM", "テンポ：90 BPM"],
+      "about.quote": ["Setiap orang berhak merasakan kebersamaan, ekspresi, dan kegembiraan melalui musik.", "Everyone deserves to experience connection, expression, and joy through music.", "誰もが音楽を通じて、つながりや表現する喜びを感じられるべきです。"],
+      "about.motto": ["— Semangat GALUNG: Musik Tanpa Batas", "— The spirit of GALUNG: Music Without Limits", "— GALUNGの想い：音楽に境界はない"],
+      "about.label": ["Tentang GALUNG", "About GALUNG", "GALUNGについて"],
+      "about.title": ["Gawang Angklung sebagai jembatan akses musik.", "The Angklung Frame: a bridge to musical access.", "アンクルン・フレームが、音楽への架け橋に。"],
+      "about.highlight": ["GALUNG merupakan singkatan dari Gawang Angklung, sebuah inovasi pembelajaran yang memadukan angklung tradisional dengan teknologi visual interaktif.", "GALUNG stands for Gawang Angklung, an educational innovation that combines traditional angklung with interactive visual technology.", "GALUNGは「Gawang Angklung」の略称です。伝統的なアンクルンと、インタラクティブな視覚技術を組み合わせた学習の取り組みです。"],
+      "about.body1": ["Dalam pembelajaran musik konvensional, bunyi sering menjadi pusat instruksi. GALUNG menawarkan jalur akses lain melalui tampilan warna, simbol, waktu, gerak visual, ritme, dan pengalaman bermain bersama. Pendekatan ini membantu peserta mengikuti momen kapan angklung perlu dimainkan secara lebih terstruktur.", "In conventional music lessons, sound is often the primary instruction. GALUNG offers another way in through colors, symbols, timing, visual motion, rhythm, and playing together. This approach helps participants follow when to play the angklung in a more structured way.", "従来の音楽学習では、音による指示が中心になりがちです。GALUNGは色、記号、タイミング、視覚的な動き、リズム、合奏を通じて別の参加方法を提案します。演奏するタイミングを、より分かりやすく捉えられるよう支援します。"],
+      "about.body2": ["Metode ini dirancang terutama untuk memperluas akses Teman Tuli dalam kegiatan musik angklung, tanpa menghilangkan nilai budaya, kebersamaan ansambel, maupun peran pendidik dalam proses belajar.", "This method is designed especially to broaden Deaf people's access to angklung activities while preserving cultural values, ensemble participation, and the role of educators in learning.", "この方法は特に、ろう者がアンクルン音楽に参加する機会を広げるために考案されました。文化的な価値や合奏の楽しさ、学びにおける教育者の役割も大切にします。"],
+      "stats.visual": ["Visual", "Visual", "視覚"],
+      "stats.visualText": ["Isyarat pembelajaran yang mudah diikuti", "Easy-to-follow learning cues", "分かりやすい学習の合図"],
+      "stats.rhythmic": ["Ritmis", "Rhythmic", "リズム"],
+      "stats.rhythmicText": ["Membantu latihan ketepatan waktu bermain", "Builds accurate timing through practice", "演奏のタイミングを練習"],
+      "stats.inclusive": ["Inklusif", "Inclusive", "インクルーシブ"],
+      "stats.inclusiveText": ["Membuka partisipasi lintas kemampuan", "Opens participation to people of all abilities", "さまざまな人の参加を広げる"],
+      "stats.culture": ["Budaya", "Culture", "文化"],
+      "stats.cultureText": ["Menghidupkan angklung dalam ruang belajar", "Brings angklung into learning spaces", "学びの場でアンクルンを奏でる"],
+      "features.label": ["Keunggulan Pendekatan", "What Makes GALUNG Different", "GALUNGの特長"],
+      "features.title": ["Belajar angklung dengan pengalaman yang lebih terbuka.", "A more open way to learn angklung.", "より開かれたアンクルン学習を。"],
+      "features.description": ["GALUNG mengedepankan interaksi visual dan pembelajaran bersama, sehingga musik dapat menjadi ruang ekspresi yang lebih aksesibel, menyenangkan, dan bermakna.", "GALUNG centers visual interaction and shared learning, making music a more accessible, enjoyable, and meaningful space for expression.", "GALUNGは視覚的なやりとりと共に学ぶことを大切にし、音楽をより参加しやすく、楽しく、意義ある表現の場にします。"],
+      "features.visualTitle": ["Petunjuk Visual", "Visual Guidance", "視覚的なガイド"],
+      "features.visualText": ["Notasi dan waktu bermain diterjemahkan ke dalam tampilan visual yang dapat diikuti saat peserta memainkan angklung secara individual maupun berkelompok.", "Notation and timing are presented visually, giving participants cues to follow while playing angklung individually or in a group.", "楽譜や演奏のタイミングを視覚的に示し、一人でもグループでも演奏の合図を追えるようにします。"],
+      "features.rhythmTitle": ["Ritme dan Tempo", "Rhythm and Tempo", "リズムとテンポ"],
+      "features.rhythmText": ["Peserta dilatih mengenali pola waktu, pergantian bagian lagu, serta momen memainkan angklung melalui sinyal yang tersinkron.", "Participants learn to recognize timing patterns, song transitions, and when to play through synchronized cues.", "同期した合図を通じて、リズムのパターンや曲の展開、演奏するタイミングを身につけます。"],
+      "features.colorTitle": ["Angklung Color Method", "Angklung Color Method", "アンクルン・カラー・メソッド"],
+      "features.colorText": ["Warna digunakan sebagai elemen bantu untuk membangun hubungan antara instruksi visual, nada angklung, dan koordinasi permainan.", "Color helps connect visual instructions, angklung notes, and coordinated playing.", "色を手がかりに、視覚的な指示とアンクルンの音、演奏の連携を結びつけます。"],
+      "features.ensembleTitle": ["Kolaborasi Ansambel", "Ensemble Collaboration", "合奏での協働"],
+      "features.ensembleText": ["GALUNG mendukung suasana belajar bersama, karena setiap peserta dapat mengambil peran untuk membentuk harmoni dalam satu karya.", "GALUNG supports shared learning, where every participant can contribute a part to the harmony of a piece.", "一人ひとりが役割を担い、一つの曲のハーモニーをつくる、共に学ぶ環境を支えます。"],
+      "features.educationTitle": ["Pendidikan Inklusif", "Inclusive Education", "インクルーシブ教育"],
+      "features.educationText": ["Pendekatan ini menempatkan akses, partisipasi, dan rasa percaya diri sebagai bagian penting dari pengalaman belajar musik.", "This approach makes access, participation, and confidence an integral part of learning music.", "音楽を学ぶ体験において、参加のしやすさ、主体的な参加、自信を大切にします。"],
+      "features.cultureTitle": ["Pelestarian Budaya", "Cultural Preservation", "文化の継承"],
+      "features.cultureText": ["Teknologi digunakan untuk memperluas cara masyarakat mengenal, memainkan, dan merayakan angklung sebagai warisan budaya.", "Technology broadens how people discover, play, and celebrate angklung as a cultural heritage.", "テクノロジーを活用し、文化遺産であるアンクルンを知り、演奏し、楽しむ機会を広げます。"],
+      "how.label": ["Cara Kerja", "How It Works", "使い方"],
+      "how.title": ["Dari layar visual menuju harmoni bersama.", "From visual cues to shared harmony.", "視覚的な合図から、みんなで奏でるハーモニーへ。"],
+      "how.description": ["GALUNG membangun pengalaman belajar yang menekankan keterbacaan instruksi, koordinasi waktu, dan keterlibatan aktif dalam ansambel angklung.", "GALUNG creates a learning experience focused on clear instructions, timing coordination, and active participation in an angklung ensemble.", "分かりやすい指示やタイミングの連携、アンクルン合奏への積極的な参加を大切にした学習体験をつくります。"],
+      "how.note": ["GALUNG bukan sekadar tampilan digital. Ia menjadi media pendukung pembelajaran yang dapat digunakan secara kontekstual bersama pendamping, guru, pelatih, komunitas, dan peserta didik.", "GALUNG is more than a digital display. It is a learning aid that can be used in context with support workers, teachers, instructors, communities, and learners.", "GALUNGは単なるデジタル画面ではありません。支援者、教師、指導者、地域コミュニティ、学習者と共に、状況に合わせて活用できる学習支援ツールです。"],
+      "how.step1Title": ["Pilih materi atau lagu", "Choose a lesson or song", "教材または曲を選ぶ"],
+      "how.step1Text": ["Pelatih menyiapkan komposisi, pola ritme, atau lagu yang akan dimainkan sesuai tingkat pengalaman peserta.", "The instructor prepares a piece, rhythm pattern, or song suited to the participants' experience.", "指導者が、参加者の経験に合わせて曲やリズムパターンを用意します。"],
+      "how.step2Title": ["Ikuti isyarat pada layar", "Follow the on-screen cues", "画面の合図を追う"],
+      "how.step2Text": ["Peserta memperhatikan warna, simbol, jalur, atau penanda waktu yang memberi informasi mengenai giliran memainkan angklung.", "Participants watch colors, symbols, lanes, or timing markers that show when it is their turn to play.", "色、記号、レーン、タイミング表示を見て、アンクルンを演奏する順番を確認します。"],
+      "how.step3Title": ["Mainkan angklung secara sinkron", "Play the angklung in sync", "タイミングを合わせて演奏する"],
+      "how.step3Text": ["Ketika penanda visual mencapai titik permainan, peserta menggoyangkan angklung sesuai nada dan perannya dalam ansambel.", "When a visual marker reaches the play point, participants shake their angklung according to their note and ensemble part.", "視覚的な目印が演奏位置に来たら、担当する音とパートに合わせてアンクルンを振ります。"],
+      "how.step4Title": ["Bangun harmoni dan percaya diri", "Build harmony and confidence", "ハーモニーと自信を育む"],
+      "how.step4Text": ["Proses latihan dilakukan berulang dan kolaboratif agar peserta dapat berkembang dalam ritme, koordinasi, ekspresi, serta kerja sama musikal.", "Repeated, collaborative practice helps participants develop rhythm, coordination, expression, and musical teamwork.", "繰り返し協力して練習することで、リズム、連携、表現力、音楽を通じたチームワークを育みます。"],
+      "founder.photo": ["Ardian Sumarwan, pencipta GALUNG", "Ardian Sumarwan, creator of GALUNG", "GALUNGの創案者、アルディアン・スマルワン"],
+      "founder.name": ["Ardian Sumarwan", "Ardian Sumarwan", "アルディアン・スマルワン"],
+      "founder.label": ["Inovator GALUNG", "GALUNG Innovator", "GALUNGの創案者"],
+      "founder.title": ["Ardian Sumarwan — menghadirkan akses melalui angklung.", "Ardian Sumarwan — expanding access through angklung.", "アンクルンを通じて参加の機会を広げる、アルディアン・スマルワン。"],
+      "founder.body1": ["Ardian Sumarwan, yang akrab disapa Kang Ari, dikenal sebagai inovator pembelajaran angklung dan pencipta metode GALUNG atau Gawang Angklung. Gagasannya lahir dari keyakinan bahwa musik tidak seharusnya memiliki batas akses.", "Ardian Sumarwan, affectionately known as Kang Ari, is an angklung learning innovator and the creator of GALUNG, or Gawang Angklung. His idea grew from the belief that access to music should have no boundaries.", "Kang Ariの愛称で親しまれるアルディアン・スマルワンは、アンクルン学習の革新に取り組み、GALUNG（Gawang Angklung）を考案しました。音楽への参加に境界があってはならないという信念から生まれた取り組みです。"],
+      "founder.body2": ["Melalui perpaduan kreativitas, pendekatan visual, dan semangat inklusivitas, GALUNG membuka kesempatan bagi Teman Tuli untuk ikut memainkan angklung, berlatih ritme, berkolaborasi, serta tampil dalam pengalaman musik bersama.", "Combining creativity, visual learning, and a commitment to inclusion, GALUNG creates opportunities for Deaf people to play angklung, practice rhythm, collaborate, and perform together.", "創造性と視覚的なアプローチ、インクルーシブな考え方を組み合わせ、ろう者がアンクルンを演奏し、リズムを練習し、協働し、共に発表する機会をつくります。"],
+      "founder.body3": ["Pengembangan GALUNG juga menegaskan bahwa teknologi dapat berfungsi sebagai jembatan: bukan menggantikan manusia dan pendidik, tetapi memperluas cara belajar agar lebih setara dan partisipatif.", "GALUNG also shows how technology can serve as a bridge: not replacing people or educators, but expanding learning so it is more equitable and participatory.", "GALUNGの開発は、テクノロジーが人や教育者に取って代わるのではなく、学び方を広げ、より公平で参加しやすい環境への架け橋になれることを示しています。"],
+      "founder.point1": ["Inovasi pembelajaran musik", "Innovation in music learning", "音楽学習の革新"],
+      "founder.point2": ["Angklung dan budaya Indonesia", "Angklung and Indonesian culture", "アンクルンとインドネシア文化"],
+      "founder.point3": ["Akses bagi Teman Tuli", "Access for Deaf people", "ろう者の参加機会"],
+      "founder.point4": ["Kolaborasi pendidikan inklusif", "Inclusive education collaboration", "インクルーシブ教育の連携"],
+      "impact.label": ["Dampak yang Diharapkan", "The Impact We Hope to Make", "目指すインパクト"],
+      "impact.title": ["Ketika musik menjadi ruang yang dapat diakses bersama.", "When music becomes a space everyone can access.", "誰もが参加できる音楽の場を目指して。"],
+      "impact.description": ["GALUNG membawa perspektif bahwa pembelajaran seni dapat dirancang lebih adaptif terhadap kebutuhan peserta didik, sekaligus tetap berakar pada identitas budaya lokal.", "GALUNG shows how arts education can better adapt to learners' needs while remaining rooted in local cultural identity.", "学習者のニーズに柔軟に応えながら、地域の文化的アイデンティティにも根ざした芸術教育を目指します。"],
+      "impact.participationTitle": ["Partisipasi", "Participation", "参加"],
+      "impact.participationText": ["Mendorong lebih banyak orang untuk mengambil bagian dalam kegiatan musik angklung tanpa membatasi pengalaman pada kemampuan mendengar.", "Encourages more people to take part in angklung music without making the experience dependent on hearing ability.", "聴力の有無にかかわらず、より多くの人がアンクルン音楽に参加できるよう後押しします。"],
+      "impact.confidenceTitle": ["Kepercayaan Diri", "Confidence", "自信"],
+      "impact.confidenceText": ["Memberi ruang bagi peserta untuk tampil, berkreasi, dan merasa memiliki peran yang bermakna dalam sebuah ansambel.", "Gives participants room to perform, create, and feel that they have a meaningful role in an ensemble.", "参加者が演奏や創作に取り組み、合奏の中で大切な役割を担える場をつくります。"],
+      "impact.togetherTitle": ["Kebersamaan", "Togetherness", "つながり"],
+      "impact.togetherText": ["Menghadirkan angklung sebagai media perjumpaan antara peserta, guru, keluarga, komunitas, dan masyarakat yang lebih inklusif.", "Brings people together through angklung: learners, teachers, families, communities, and a more inclusive society.", "アンクルンを通じて、学習者、教師、家族、地域コミュニティ、そしてよりインクルーシブな社会をつなぎます。"],
+      "contact.title": ["Mari membangun pengalaman musik yang inklusif.", "Let's create inclusive musical experiences.", "インクルーシブな音楽体験を一緒につくりましょう。"],
+      "contact.description": ["Terbuka untuk kolaborasi pendidikan, workshop, pelatihan angklung, kegiatan komunitas, riset, serta pengembangan ekosistem musik yang dapat diakses oleh lebih banyak orang.", "We welcome collaboration in education, workshops, angklung training, community programs, research, and building a music ecosystem accessible to more people.", "教育、ワークショップ、アンクルン研修、地域活動、研究など、より多くの人が参加できる音楽環境づくりに向けた連携を歓迎します。"],
+      "contact.button": ["Hubungi Ardian <span>→</span>", "Contact Ardian <span>→</span>", "アルディアンに連絡 <span>→</span>"],
+      "contact.whatsappMessage": ["Halo Ardian, saya tertarik untuk berdiskusi tentang kolaborasi dengan GALUNG.", "Hello Ardian, I would like to discuss a collaboration with GALUNG.", "アルディアンさん、こんにちは。GALUNGとの連携について相談したいです。"],
+      "footer.description": ["Inovasi pembelajaran angklung berbasis visual untuk memperluas akses musik, kolaborasi, dan pelestarian budaya Indonesia.", "A visual-based angklung learning innovation that expands access to music, collaboration, and the preservation of Indonesian culture.", "視覚を活用したアンクルン学習の取り組みを通じて、音楽への参加、協働、インドネシア文化の継承を広げます。"],
+      "footer.navigation": ["Navigasi", "Navigation", "ナビゲーション"],
+      "footer.collaborate": ["Kolaborasi", "Collaborate", "連携"],
+      "footer.email": ["Email", "Email", "メール"],
+      "footer.copyright": ["© 2026 Ardian Sumarwan — GALUNG (Gawang Angklung).", "© 2026 Ardian Sumarwan — GALUNG (Angklung Frame).", "© 2026 アルディアン・スマルワン — GALUNG（アンクルン・フレーム）。"],
+      "footer.tagline": ["Musik, budaya, dan akses untuk semua.", "Music, culture, and access for everyone.", "音楽、文化、そしてすべての人に開かれた参加機会。"],
+    };
+
+    const languageIndexes = { id: 0, en: 1, ja: 2 };
+
+    function setLanguage(language) {
+      const activeLanguage = Object.hasOwn(languageIndexes, language) ? language : "id";
+      const languageIndex = languageIndexes[activeLanguage];
+      const getTranslation = (key) => translations[key]?.[languageIndex];
+
+      document.documentElement.lang = activeLanguage;
+      document.title = getTranslation("meta.title");
+      document.querySelector('meta[name="description"]').content = getTranslation("meta.description");
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const translatedContent = getTranslation(element.dataset.i18n);
+        if (translatedContent) element.innerHTML = translatedContent;
+      });
+
+      document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+        element.setAttribute("aria-label", getTranslation(element.dataset.i18nAria));
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        element.setAttribute("alt", getTranslation(element.dataset.i18nAlt));
+      });
+
+      const menuIsOpen = navLinks.classList.contains("active");
+      menuButton.textContent = menuIsOpen ? "✕" : "☰";
+      menuButton.setAttribute("aria-label", getTranslation(menuIsOpen ? "menu.close" : "menu.open"));
+
+      const whatsappMessage = getTranslation("contact.whatsappMessage");
+      document.getElementById("whatsappLink").href = `https://wa.me/6281221877141?text=${encodeURIComponent(whatsappMessage)}`;
+      languageSelect.value = activeLanguage;
+      try {
+        localStorage.setItem("galung-language", activeLanguage);
+      } catch {
+      }
+    }
+
+    languageSelect.addEventListener("change", () => setLanguage(languageSelect.value));
+
+    let savedLanguage = "id";
+    try {
+      savedLanguage = localStorage.getItem("galung-language") || "id";
+    } catch {
+    }
+    setLanguage(Object.hasOwn(languageIndexes, savedLanguage) ? savedLanguage : "id");
 
     window.addEventListener("scroll", () => {
       navbar.classList.toggle("scrolled", window.scrollY > 25);
@@ -1633,13 +1814,16 @@
 
     menuButton.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      menuButton.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+      const menuIsOpen = navLinks.classList.contains("active");
+      menuButton.textContent = menuIsOpen ? "✕" : "☰";
+      menuButton.setAttribute("aria-label", translations[menuIsOpen ? "menu.close" : "menu.open"][languageIndexes[languageSelect.value]]);
     });
 
     document.querySelectorAll(".nav-links a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-label", translations["menu.open"][languageIndexes[languageSelect.value]]);
       });
     });
   </script>
